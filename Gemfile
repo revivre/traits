@@ -33,6 +33,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 gem 'chartkick'
 gem 'groupdate'
+gem 'bootstrap-sass'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

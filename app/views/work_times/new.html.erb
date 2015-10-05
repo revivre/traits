@@ -1,0 +1,13 @@
+<%= form_for(@work_time) do |f| %>
+  <label class="control-label" for="">datetime</label>
+<!--  <%= f.text_field :time, :class => 'form-control', id: "datetimepicker" %> -->
+  <div class="form-group">
+    <div class='input-group date' id='datetimepicker'>
+        <input type='text' class="form-control" />
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-time"></span>
+        </span>
+    </div>
+</div>
+  <%= f.submit 'submit', class: 'btn btn-primary' %>
+<% end %>
