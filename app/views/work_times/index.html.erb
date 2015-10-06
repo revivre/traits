@@ -1,6 +1,15 @@
-<% @work_times.each do |work_time| %>
-  <ul>
-    <li><%= work_time.user_id %></li>
-    <li><%= work_time.time.to_s %></li>
-  </ul>
-<% end %>
+<h1>WorkTimes#index</h1>
+<table class="table table-bordered">
+  <tr>
+      <th>id</th>
+      <th>user_id</th>
+      <th>time</th>
+  </tr>
+  <% @work_times.each do |work_time| %>
+  <tr>
+      <td><%= work_time.id %></td>
+      <td><%= work_time.user_id %></td>
+      <td><%= work_time.time.to_s %></td>
+  </tr>
+  <% end %>
+</table>

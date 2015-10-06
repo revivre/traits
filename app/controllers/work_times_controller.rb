@@ -17,9 +17,17 @@ class WorkTimesController < ApplicationController
 end
 
   def create
-    @work_time = WorkTime.new
+    @work_time = WorkTime.new(work_time_params)
     if @work_time.save
       redirect_to @work_time
+    else
+      render 'new'
     end
   end
+
+  private
+
+    def work_time_params
+      params.require(:work_time).permit(:id, :user_id, :time)
+    end
 end
