@@ -49,4 +49,9 @@ group :development, :test do
 
   gem 'rspec-rails'
   gem 'factory_girl_rails', '4.2.1'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+
+  gem 'guard-rspec'
+  gem 'spring-commands-rspec'
 end
