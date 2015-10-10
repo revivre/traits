@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-  get 'users/new'
   get 'signup'  => 'users#new'
   resources :users
   resources :work_times
