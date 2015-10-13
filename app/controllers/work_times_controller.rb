@@ -1,4 +1,5 @@
 class WorkTimesController < ApplicationController
+  before_action :logged_in_user, only: [:create, :destroy]
 
   def index
     @work_times = WorkTime.all
@@ -17,9 +18,10 @@ class WorkTimesController < ApplicationController
 end
 
   def create
-    @work_time = WorkTime.new(work_time_params)
+    @work_time = current_user.work_times.build(work_time_params)
     if @work_time.save
-      redirect_to @work_time
+      flash[:success] = "WorkTime created!"
+      redirect_to root_url
     else
       render 'new'
     end

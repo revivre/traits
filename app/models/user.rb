@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :work_times, dependent: :destroy
   attr_accessor :remember_token
   has_secure_password
-  validates :password, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   def remember
     self.remember_token = User.new_token

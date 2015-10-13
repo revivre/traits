@@ -3,7 +3,12 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= @user.name %>
+        <p><%= @user.name %></p>
+        <p>
+        <% @user.work_times.each do |w| %>
+        <li><%= w.time.to_s %></li>
+        <% end %>
+        </p>
       </h1>
     </section>
   </aside>
