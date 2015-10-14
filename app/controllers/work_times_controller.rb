@@ -30,6 +30,6 @@ end
   private
 
     def work_time_params
-      params.require(:work_time).permit(:id, :user_id, :time)
+      params.require(:work_time).permit(:id, :user_id, :start_time, :end_time)
     end
 end

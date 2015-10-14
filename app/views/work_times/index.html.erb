@@ -7,13 +7,15 @@
   <tr>
       <th>id</th>
       <th>user_id</th>
-      <th>time</th>
+      <th>start_time</th>
+      <th>end_time</th>
   </tr>
   <% @work_times.each do |work_time| %>
   <tr>
       <td><%= work_time.id %></td>
       <td><%= work_time.user_id %></td>
-      <td><%= work_time.time.to_s %></td>
+      <td><%= work_time.start_time.to_s %></td>
+      <td><%= work_time.end_time.to_s %></td>
   </tr>
   <% end %>
 </table>

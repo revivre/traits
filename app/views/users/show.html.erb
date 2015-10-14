@@ -6,7 +6,7 @@
         <p><%= @user.name %></p>
         <p>
         <% @user.work_times.each do |w| %>
-        <li><%= w.time.to_s %></li>
+        <li><%= w.start_time.to_s %> => <%= w.end_time.to_s %></li>
         <% end %>
         </p>
       </h1>
