@@ -1,1 +1,22 @@
-<h1>WorkTimes#edit</h1>
+<%= form_for(@work_time) do |f| %>
+  <div class="form-group">
+    <%= f.hidden_field :user_id, class: 'form-control' %>
+    <%= f.label :start_time, class: 'control-label' %>
+    <div class='input-group date' id='datetimepicker'>
+
+      <%= f.text_field :start_time, class: 'form-control' %>
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-time"></span>
+      </span>
+    </div>
+    <%= f.label :end_time, class: 'control-label' %>
+    <div class='input-group date' id='datetimepicker'>
+
+      <%= f.text_field :end_time, class: 'form-control' %>
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-time"></span>
+      </span>
+    </div>
+    <p><%= f.submit 'submit', class: 'btn btn-primary' %></p>
+  </div>
+<% end %>

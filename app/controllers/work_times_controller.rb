@@ -6,7 +6,7 @@ class WorkTimesController < ApplicationController
   end
 
   def edit
-
+    @work_time = WorkTime.find(params[:id])
   end
 
   def show

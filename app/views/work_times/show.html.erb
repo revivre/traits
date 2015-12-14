@@ -3,11 +3,13 @@
   <tr>
       <th>id</th>
       <th>user_id</th>
-      <th>time</th>
+      <th>start_time</th>
+      <th>end_time</th>
   </tr>
   <tr>
-      <td><%= @work_time.id %></td>
+      <td><%= link_to @work_time.id, {:controller => "work_times", :action => "edit", :id => @work_time.id} %></td>
       <td><%= @work_time.user_id %></td>
-      <td><%= @work_time.time.to_s %></td>
+      <td><%= format_date @work_time.start_time %></td>
+      <td><%= format_date @work_time.end_time %></td>
   </tr>
 </table>
