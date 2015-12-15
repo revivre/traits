@@ -8,8 +8,8 @@
   </tr>
   <tr>
       <td><%= link_to @work_time.id, {:controller => "work_times", :action => "edit", :id => @work_time.id} %></td>
-      <td><%= @work_time.user_id %></td>
-      <td><%= format_date @work_time.start_time %></td>
-      <td><%= format_date @work_time.end_time %></td>
+      <td><%= best_in_place @work_time, :user_id %></td>
+      <td><%= best_in_place @work_time, :start_time %></td>
+      <td><%= best_in_place @work_time, :end_time %></td>
   </tr>
 </table>

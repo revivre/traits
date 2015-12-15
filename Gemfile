@@ -38,6 +38,9 @@ gem 'faker'
 gem 'gimei'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'best_in_place'
+gem 'jquery-ui-rails'
+gem 'responders'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

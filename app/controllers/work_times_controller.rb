@@ -1,5 +1,6 @@
 class WorkTimesController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
+  respond_to :html, :json
 
   def index
     @work_times = WorkTime.all
@@ -7,6 +8,21 @@ class WorkTimesController < ApplicationController
 
   def edit
     @work_time = WorkTime.find(params[:id])
+  end
+
+  def update
+    @work_time = WorkTime.find(params[:id])
+
+    respond_to do |format|
+      if @work_time.update_attributes(work_time_params)
+        format.html { redirect_to(@work_time,
+          :notice => 'WorkTime was successfully updated.') }
+        format.json { respond_with_bip(@work_time) }
+      else
+        format.html { render :action => "edit" }
+        format.json { respond_with_bip(@work_time) }
+      end
+    end
   end
 
   def show
