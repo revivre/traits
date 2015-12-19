@@ -1,5 +1,27 @@
 source 'https://rubygems.org'
 
+# formatting
+gem 'ruby-beautify'
+gem 'rubocop'
+# graph
+gem 'chartkick'
+gem 'groupdate'
+# css, js
+gem 'bootstrap-sass'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
+# generate fake names
+gem 'faker'
+gem 'gimei'
+# paginate
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+# click to edit models
+gem 'best_in_place'
+gem 'jquery-ui-rails'
+gem 'responders'
+# ER Diagram
+gem 'rails-erd'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -29,18 +51,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'chartkick'
-gem 'groupdate'
-gem 'bootstrap-sass'
-gem 'momentjs-rails', '>= 2.9.0'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
-gem 'faker'
-gem 'gimei'
-gem 'will_paginate'
-gem 'bootstrap-will_paginate'
-gem 'best_in_place'
-gem 'jquery-ui-rails'
-gem 'responders'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
