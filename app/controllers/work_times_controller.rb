@@ -19,7 +19,7 @@ class WorkTimesController < ApplicationController
         format.json { respond_with_bip(@work_time) }
         flash[:success] = 'WorkTimes were successfully updated.'
       else
-        format.html { render :action => "edit" }
+        format.html { render action: 'edit' }
         format.json { respond_with_bip(@work_time) }
       end
     end
@@ -36,7 +36,7 @@ end
   def create
     @work_time = current_user.work_times.build(work_time_params)
     if @work_time.save
-      flash[:success] = "WorkTime created!"
+      flash[:success] = 'WorkTime created!'
       redirect_to root_url
     else
       render 'new'
@@ -45,7 +45,7 @@ end
 
   private
 
-    def work_time_params
-      params.require(:work_time).permit(:id, :user_id, :start_time, :end_time)
-    end
+  def work_time_params
+    params.require(:work_time).permit(:id, :user_id, :start_time, :end_time)
+  end
 end

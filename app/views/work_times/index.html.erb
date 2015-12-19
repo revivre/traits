@@ -5,17 +5,17 @@
 
 <table class="table table-bordered">
   <tr>
-      <th>id</th>
-      <th>user_id</th>
-      <th>start_time</th>
-      <th>end_time</th>
+    <th>id</th>
+    <th>user_id</th>
+    <th>start_time</th>
+    <th>end_time</th>
   </tr>
   <% @work_times.each do |work_time| %>
   <tr>
-      <td><%= link_to work_time.id, {:controller => "work_times", :action => "show", :id => work_time.id} %></td>
-      <td><%= work_time.user_id %></td>
-      <td><%= format_date work_time.start_time %></td>
-      <td><%= format_date work_time.end_time %></td>
+    <td><%= link_to work_time.id, {:controller => "work_times", :action => "show", :id => work_time.id} %></td>
+    <td><%= work_time.user_id %></td>
+    <td><%= format_date work_time.start_time %></td>
+    <td><%= format_date work_time.end_time %></td>
   </tr>
   <% end %>
 </table>
