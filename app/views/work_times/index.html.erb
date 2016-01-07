@@ -14,8 +14,8 @@
   <tr>
     <td><%= link_to work_time.id, {:controller => "work_times", :action => "show", :id => work_time.id} %></td>
     <td><%= format_date work_time.work_date %></td>
-    <td><%= format_date work_time.start_time %></td>
-    <td><%= format_date work_time.end_time %></td>
+    <td><%= format_time work_time.start_time %></td>
+    <td><%= format_time work_time.end_time %></td>
   </tr>
   <% end %>
 </table>
