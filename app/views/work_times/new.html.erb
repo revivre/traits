@@ -1,7 +1,6 @@
 <%= form_for(@work_time) do |f| %>
   <div class="form-group">
     <%= f.hidden_field :user_id, class: 'form-control' %>
-    <% if start_time_exists? %>
     <%= f.label :start_time, class: 'control-label' %>
     <div class='input-group date' id='datetimepicker_start'>
 
@@ -10,7 +9,6 @@
         <span class="glyphicon glyphicon-time"></span>
       </span>
     </div>
-    <% else %>
     <%= f.label :end_time, class: 'control-label' %>
     <div class='input-group date' id='datetimepicker_end'>
 
@@ -19,7 +17,6 @@
         <span class="glyphicon glyphicon-time"></span>
       </span>
     </div>
-    <% end %>
     <p><%= f.submit 'submit', class: 'btn btn-primary' %></p>
   </div>
 
