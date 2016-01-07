@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rails-i18n', '~> 4.0.0'
 # formatting
 gem 'ruby-beautify'
 gem 'rubocop'
