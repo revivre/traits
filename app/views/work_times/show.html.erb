@@ -2,13 +2,13 @@
 <table class="table table-bordered">
   <tr>
       <th>id</th>
-      <th>user_id</th>
+      <th>work_date</th>
       <th>start_time</th>
       <th>end_time</th>
   </tr>
   <tr>
       <td><%= link_to @work_time.id, {:controller => "work_times", :action => "edit", :id => @work_time.id} %></td>
-      <td><%= best_in_place @work_time, :user_id %></td>
+      <td><%= best_in_place @work_time, :work_date %></td>
       <td><%= best_in_place @work_time, :start_time %></td>
       <td><%= best_in_place @work_time, :end_time %></td>
   </tr>
