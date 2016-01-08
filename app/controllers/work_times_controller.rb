@@ -15,12 +15,12 @@ class WorkTimesController < ApplicationController
 
     respond_to do |format|
       if @work_time.update_attributes(work_time_params)
-        format.html { redirect_to(@work_time) }
-        format.json { respond_with_bip(@work_time) }
+        format.html { redirect_to work_times_path }
+        format.json { respond_with_bip @work_time }
         flash[:success] = 'WorkTimes were successfully updated.'
       else
         format.html { render action: 'edit' }
-        format.json { respond_with_bip(@work_time) }
+        format.json { respond_with_bip @work_time }
       end
     end
   end

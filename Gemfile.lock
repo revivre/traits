@@ -89,6 +89,8 @@ GEM
     faker (1.6.1)
       i18n (~> 0.5)
     ffi (1.9.10)
+    font-awesome-rails (4.5.0.0)
+      railties (>= 3.2, < 5.0)
     formatador (0.2.5)
     gimei (0.2.0)
     globalid (0.3.6)
@@ -109,6 +111,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    holiday_japan (1.2.0)
     i18n (0.7.0)
     jbuilder (2.4.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -132,7 +135,7 @@ GEM
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
-    momentjs-rails (2.10.6)
+    momentjs-rails (2.11.0)
       railties (>= 3.1)
     multi_json (1.11.2)
     nenv (0.2.0)
@@ -295,9 +298,11 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   factory_girl_rails (= 4.2.1)
   faker
+  font-awesome-rails
   gimei
   groupdate
   guard-rspec
+  holiday_japan
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails

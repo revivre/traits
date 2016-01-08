@@ -1,15 +1,25 @@
-<h1>WorkTimes#show</h1>
+<p>
+  <div class="btn-group">
+    <%= link_to '変更',
+     {:controller => "work_times", :action => "edit", :id => @work_time.id},
+      class: "btn btn-primary btn-xs" %>
+  </div>
+</p>
 <table class="table table-bordered">
   <tr>
-      <th>id</th>
-      <th>work_date</th>
-      <th>start_time</th>
-      <th>end_time</th>
+      <th><%= fa_icon "user" %> 名前</th>
+      <td><%= current_user.name %></td>
   </tr>
   <tr>
-      <td><%= link_to @work_time.id, {:controller => "work_times", :action => "edit", :id => @work_time.id} %></td>
+      <th><%= fa_icon "calendar" %> 日付</th>
       <td><%= best_in_place @work_time, :work_date %></td>
-      <td><%= best_in_place @work_time, :start_time %></td>
+  </tr>
+  <tr>
+      <th><%= fa_icon "clock-o" %> 始業時間</th>
+      <td><%= best_in_place @work_time, :start_time, :as => :date %></td>
+  </tr>
+  <tr>
+      <th><%= fa_icon "clock-o" %> 終業時間</th>
       <td><%= best_in_place @work_time, :end_time %></td>
   </tr>
 </table>

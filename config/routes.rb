@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root                'work_times#new'
+  root                'work_times#index'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'

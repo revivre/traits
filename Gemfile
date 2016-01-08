@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# appearance
+gem "font-awesome-rails"
+# i18n
 gem 'rails-i18n', '~> 4.0.0'
 # formatting
 gem 'ruby-beautify'
@@ -7,6 +10,8 @@ gem 'rubocop'
 # graph
 gem 'chartkick'
 gem 'groupdate'
+# calendar
+gem 'holiday_japan'
 # css, js
 gem 'bootstrap-sass'
 gem 'momentjs-rails', '>= 2.9.0'

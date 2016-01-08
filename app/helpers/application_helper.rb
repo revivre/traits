@@ -12,4 +12,12 @@ module ApplicationHelper
   def day_letter(day)
     I18n.t('date.abbr_day_names')[day % 7].first
   end
+
+  def check_holiday(work_date, first_day, last_day)
+    if (HolidayJp.between(first_day, last_day).has_key?(work_date))
+      return true
+    else
+      return false
+    end
+  end
 end

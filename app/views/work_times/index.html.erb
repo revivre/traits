@@ -1,21 +1,31 @@
-<h1>WorkTimes#index</h1>
-<div class="btn-group">
-  <%= link_to "Input", new_work_time_path, class: "btn btn-primary" %>
-</div>
-
+<h1><%= @work_times.first.work_date.strftime('%Y年%m月') %></h1>
 <table class="table table-bordered">
-  <tr>
-    <th>id</th>
-    <th>work_date</th>
-    <th>start_time</th>
-    <th>end_time</th>
-  </tr>
+    <tr>
+      <th><%= fa_icon "calendar" %> 日付</th>
+      <th><%= fa_icon "clock-o" %> 始業時間</th>
+      <th><%= fa_icon "clock-o" %> 終業時間</th>
+      <th><%= fa_icon "pencil" %></th>
+    </tr>
   <% @work_times.each do |work_time| %>
-  <tr>
-    <td><%= link_to work_time.id, {:controller => "work_times", :action => "show", :id => work_time.id} %></td>
-    <td><%= format_date work_time.work_date %></td>
-    <td><%= format_time work_time.start_time %></td>
-    <td><%= format_time work_time.end_time %></td>
-  </tr>
+      <% if check_holiday(work_time.work_date, @work_times.first.work_date, @work_times.last.work_date) ||
+            work_time.work_date.cwday == 7
+        %>
+      <tr bgcolor='pink'>
+      <% elsif work_time.work_date.cwday == 6 %>
+      <tr bgcolor='skyblue'>
+      <% else %>
+      <tr>
+      <% end %>
+        <td><%= format_date work_time.work_date %></td>
+        <td><%= format_time work_time.start_time %></td>
+        <td><%= format_time work_time.end_time %></td>
+        <td>
+          <div class="btn-group">
+            <%= link_to '変更',
+             {:controller => "work_times", :action => "show", :id => work_time.id},
+              class: "btn btn-primary btn-xs" %>
+          </div>
+        </td>
+      </tr>
   <% end %>
 </table>
