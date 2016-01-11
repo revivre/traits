@@ -24,6 +24,6 @@
 $(function () {
   $('#datetimepicker_start, #datetimepicker_end').datetimepicker({
       locale: 'ja',
-      format: 'MM/DD HH:mm'
+      format: 'HH:mm'
   });
 });
