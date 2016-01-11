@@ -10,9 +10,9 @@
       <% if check_holiday(work_time.work_date, @work_times.first.work_date, @work_times.last.work_date) ||
             work_time.work_date.cwday == 7
         %>
-      <tr bgcolor='pink'>
+      <tr bgcolor='#ffc1c1'>
       <% elsif work_time.work_date.cwday == 6 %>
-      <tr bgcolor='skyblue'>
+      <tr bgcolor='#e5edfe'>
       <% else %>
       <tr>
       <% end %>
