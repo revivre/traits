@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151014144254) do
+ActiveRecord::Schema.define(version: 20160111134316) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -23,10 +23,11 @@ ActiveRecord::Schema.define(version: 20151014144254) do
 
   create_table "work_times", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "start_time"
+    t.time     "start_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "end_time"
+    t.time     "end_time"
+    t.date     "work_date"
   end
 
 end

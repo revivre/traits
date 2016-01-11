@@ -2,10 +2,14 @@
   <div class="form-group">
     <%= f.hidden_field :user_id, class: 'form-control' %>
     <%= f.label :work_date, class: 'control-label' %>
-    <%= f.date_select :work_date, class: 'form-control', :discard_year => true, :use_month_numbers => true %>
+    <div class='input-group date' id='datetimepicker_date'>
+      <%= f.text_field :work_date, class: 'form-control' %>
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+      </span>
+    </div>
     <%= f.label :start_time, class: 'control-label' %>
     <div class='input-group date' id='datetimepicker_start'>
-
       <%= f.text_field :start_time, class: 'form-control' %>
       <span class="input-group-addon">
         <span class="glyphicon glyphicon-time"></span>

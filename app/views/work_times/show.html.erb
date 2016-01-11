@@ -7,19 +7,21 @@
 </p>
 <table class="table table-bordered">
   <tr>
-      <th><%= fa_icon "user" %> 名前</th>
-      <td><%= current_user.name %></td>
-  </tr>
-  <tr>
       <th><%= fa_icon "calendar" %> 日付</th>
       <td><%= best_in_place @work_time, :work_date %></td>
   </tr>
   <tr>
       <th><%= fa_icon "clock-o" %> 始業時間</th>
-      <td><%= best_in_place @work_time, :start_time, :as => :date %></td>
+      <td>
+          <%= best_in_place @work_time, :start_time,
+              :display_with => proc { |t| format_time(t) } %>
+      </td>
   </tr>
   <tr>
       <th><%= fa_icon "clock-o" %> 終業時間</th>
-      <td><%= best_in_place @work_time, :end_time %></td>
+      <td>
+        <%= best_in_place @work_time, :end_time,
+            :display_with => proc { |t| format_time(t) } %>
+      </td>
   </tr>
 </table>
