@@ -1,15 +1,7 @@
 <h1>Users#show</h1>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <p><%= @user.name %></p>
-        <p>
-        <% @user.work_times.each do |w| %>
-        <li><%= w.start_time.to_s %> => <%= w.end_time.to_s %></li>
-        <% end %>
-        </p>
-      </h1>
-    </section>
-  </aside>
-</div>
+<table class="table table-bordered">
+  <tr>
+      <th><%= fa_icon "user" %> 名前</th>
+      <td><%= best_in_place @user, :name %></td>
+  </tr>
+</table>
