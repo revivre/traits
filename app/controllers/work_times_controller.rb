@@ -17,7 +17,7 @@ class WorkTimesController < ApplicationController
       if @work_time.update_attributes(work_time_params)
         format.html { redirect_to work_times_path }
         format.json { respond_with_bip @work_time }
-        flash[:success] = 'WorkTimes were successfully updated.'
+        flash[:success] = @work_time.work_date.to_s + 'の勤務時間が更新されました'
       else
         format.html { render action: 'edit' }
         format.json { respond_with_bip @work_time }
@@ -36,7 +36,7 @@ end
   def create
     @work_time = current_user.work_times.build(work_time_params)
     if @work_time.save
-      flash[:success] = 'WorkTime created!'
+      flash[:success] = @work_time.work_date.to_s + 'の勤務時間が入力されました'
       redirect_to root_url
     else
       render 'new'
