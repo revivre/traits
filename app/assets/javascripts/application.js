@@ -27,9 +27,16 @@ $(function () {
       format: 'HH:mm'
   });
 });
+
 $(function () {
   $('#datetimepicker_date').datetimepicker({
       locale: 'ja',
       format: 'YYYY/MM/DD'
+  });
+});
+
+$(function () {
+  $(".alert-success").fadeTo(2000, 0).slideUp(500, function() {
+    $(this).remove();
   });
 });
