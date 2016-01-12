@@ -1,9 +1,11 @@
-<h1><%= @work_times.first.work_date.strftime('%Y年%m月') %></h1>
+<h1><%= unless @work_times.first.work_date then ''
+        else @work_times.first.work_date.strftime('%Y年%m月') end %></h1>
 <table class="table table-bordered">
     <tr>
       <th><%= fa_icon "calendar" %> 日付</th>
       <th><%= fa_icon "clock-o" %> 始業時間</th>
       <th><%= fa_icon "clock-o" %> 終業時間</th>
+      <th><%= fa_icon "sticky-note-o" %> 備考</th>
       <th><%= fa_icon "pencil" %></th>
     </tr>
   <% @work_times.each do |work_time| %>
@@ -19,6 +21,10 @@
         <td><%= format_date work_time.work_date %></td>
         <td><%= format_time work_time.start_time %></td>
         <td><%= format_time work_time.end_time %></td>
+        <td>
+          <span style="color: red"><%= holiday_name(work_time.work_date) %></span><br />
+          <%= work_time.note %>
+        </td>
         <td>
           <div class="btn-group">
             <%= link_to '変更',

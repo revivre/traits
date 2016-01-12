@@ -17,12 +17,13 @@
     </div>
     <%= f.label :end_time, class: 'control-label' %>
     <div class='input-group date' id='datetimepicker_end'>
-
       <%= f.text_field :end_time, class: 'form-control' %>
       <span class="input-group-addon">
         <span class="glyphicon glyphicon-time"></span>
       </span>
     </div>
+    <%= f.label :note, class: 'control-label' %>
+    <%= f.text_field :note, class: 'form-control' %>
     <p><%= f.submit 'submit', class: 'btn btn-primary' %></p>
   </div>
 <% end %>

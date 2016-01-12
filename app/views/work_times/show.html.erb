@@ -24,4 +24,10 @@
             :display_with => proc { |t| format_time(t) } %>
       </td>
   </tr>
+  <tr>
+      <th><%= fa_icon "sticky-note-o" %> 備考</th>
+      <td>
+        <%= best_in_place @work_time, :note %>
+      </td>
+  </tr>
 </table>

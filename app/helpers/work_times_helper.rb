@@ -7,6 +7,10 @@ module WorkTimesHelper
     end
   end
 
+  def holiday_name(date)
+    HolidayJapan.name(date)
+  end
+
   def format_date(date)
     return nil unless date
     date.strftime('%m/%d') + '(' + day_letter(date.wday) + ')'
