@@ -27,3 +27,9 @@ $(function () {
       format: 'HH:mm'
   });
 });
+$(function () {
+  $('#datetimepicker_date').datetimepicker({
+      locale: 'ja',
+      format: 'YYYY/MM/DD'
+  });
+});
