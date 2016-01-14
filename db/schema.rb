@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160112152224) do
+ActiveRecord::Schema.define(version: 20160114112417) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -24,11 +24,12 @@ ActiveRecord::Schema.define(version: 20160112152224) do
   create_table "work_times", force: :cascade do |t|
     t.integer  "user_id"
     t.time     "start_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.time     "end_time"
     t.date     "work_date"
     t.text     "note"
+    t.integer  "holiday_code"
   end
 
 end

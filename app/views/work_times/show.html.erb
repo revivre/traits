@@ -25,6 +25,13 @@
       </td>
   </tr>
   <tr>
+      <th><%= fa_icon "sticky-note-o" %> 休日区分</th>
+      <td>
+        <%= best_in_place @work_time, :holiday_code,
+            :display_with => proc { |h| @holiday_enum.key(h) } %>
+      </td>
+  </tr>
+  <tr>
       <th><%= fa_icon "sticky-note-o" %> 備考</th>
       <td>
         <%= best_in_place @work_time, :note %>

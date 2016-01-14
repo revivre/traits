@@ -4,10 +4,12 @@ class WorkTimesController < ApplicationController
 
   def index
     @work_times = WorkTime.all
+    @holiday_enum = WorkTime.holiday_enums
   end
 
   def edit
     @work_time = WorkTime.find(params[:id])
+    @holiday_enum = WorkTime.holiday_enums
   end
 
   def update
@@ -27,10 +29,12 @@ class WorkTimesController < ApplicationController
 
   def show
     @work_time = WorkTime.find(params[:id])
+    @holiday_enum = WorkTime.holiday_enums
   end
 
   def new
     @work_time = WorkTime.new
+    @holiday_enum = WorkTime.holiday_enums
 end
 
   def create
@@ -46,6 +50,6 @@ end
   private
 
   def work_time_params
-    params.require(:work_time).permit(:id, :user_id, :work_date, :start_time, :end_time, :note)
+    params.require(:work_time).permit(:id, :user_id, :work_date, :start_time, :end_time, :holiday_code, :note)
   end
 end
