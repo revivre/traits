@@ -21,20 +21,21 @@
 //= require moment/ja.js
 //= require bootstrap-datetimepicker
 $(function () {
-  $('#datetimepicker_start, #datetimepicker_end').datetimepicker({
+  $('#datetimepicker_start').datetimepicker({
+      locale: 'ja',
+      format: 'hh:mm'
+  });
+
+  $('#datetimepicker_end').datetimepicker({
       locale: 'ja',
       format: 'HH:mm'
   });
-});
 
-$(function () {
   $('#datetimepicker_date').datetimepicker({
       locale: 'ja',
       format: 'YYYY/MM/DD'
   });
-});
 
-$(function () {
   $(".alert-success").fadeTo(2000, 0).slideUp(500, function() {
     $(this).remove();
   });
