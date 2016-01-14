@@ -16,7 +16,6 @@
 //= require best_in_place
 //= require best_in_place.jquery-ui
 //= require bootstrap
-//= require turbolinks
 //= require_tree .
 //= require moment
 //= require moment/ja.js
