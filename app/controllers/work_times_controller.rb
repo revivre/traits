@@ -7,6 +7,23 @@ class WorkTimesController < ApplicationController
     @holiday_enum = WorkTime.holiday_enums
   end
 
+  def index_month
+    @holiday_enum = WorkTime.holiday_enums
+
+    @year = params[:year].to_i
+    @month = params[:month].to_i
+
+    if( @year == 0 || @month == 0 )
+      @work_time = WorkTime.find(params[:id])
+      return
+    end
+
+    start_date = Date.new(@year,@month, 1)
+    end_date   = Date.new(@year,@month, -1)
+    @work_times = WorkTime.where(:work_date => start_date..end_date)
+    render "work_times/index"
+  end
+
   def edit
     @work_time = WorkTime.find(params[:id])
     @holiday_enum = WorkTime.holiday_enums

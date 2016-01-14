@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
-
   get 'signup'  => 'users#new'
+
+  get 'ym/:year/:month' => 'work_times#index_month'
+
   resources :users
   resources :work_times
 
