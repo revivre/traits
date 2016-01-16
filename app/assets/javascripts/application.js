@@ -23,17 +23,20 @@
 $(function () {
   $('#datetimepicker_start').datetimepicker({
       locale: 'ja',
-      format: 'hh:mm'
+      format: 'hh:mm',
+      defaultDate: "01/01/2000 08:40"
   });
 
   $('#datetimepicker_end').datetimepicker({
       locale: 'ja',
-      format: 'HH:mm'
+      format: 'HH:mm',
+      defaultDate: "01/01/2000 17:30"
   });
 
   $('#datetimepicker_date').datetimepicker({
       locale: 'ja',
-      format: 'YYYY/MM/DD'
+      format: 'YYYY/MM/DD',
+      defaultDate: new Date()
   });
 
   $(".alert-success").fadeTo(2000, 0).slideUp(500, function() {
