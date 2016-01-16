@@ -5,10 +5,14 @@ class WorkTimesController < ApplicationController
   def index
     @work_times = WorkTime.all
     @holiday_enum = WorkTime.holiday_enums
+    @late_enum = WorkTime.late_enums
+    @leave_enum = WorkTime.leave_enums
   end
 
   def index_month
     @holiday_enum = WorkTime.holiday_enums
+    @late_enum = WorkTime.late_enums
+    @leave_enum = WorkTime.leave_enums
 
     @year = params[:year].to_i
     @month = params[:month].to_i
@@ -27,6 +31,8 @@ class WorkTimesController < ApplicationController
   def edit
     @work_time = WorkTime.find(params[:id])
     @holiday_enum = WorkTime.holiday_enums
+    @late_enum = WorkTime.late_enums
+    @leave_enum = WorkTime.leave_enums
   end
 
   def update
@@ -47,11 +53,15 @@ class WorkTimesController < ApplicationController
   def show
     @work_time = WorkTime.find(params[:id])
     @holiday_enum = WorkTime.holiday_enums
+    @late_enum = WorkTime.late_enums
+    @leave_enum = WorkTime.leave_enums
   end
 
   def new
     @work_time = WorkTime.new
     @holiday_enum = WorkTime.holiday_enums
+    @late_enum = WorkTime.late_enums
+    @leave_enum = WorkTime.leave_enums
 end
 
   def create
@@ -67,6 +77,7 @@ end
   private
 
   def work_time_params
-    params.require(:work_time).permit(:id, :user_id, :work_date, :start_time, :end_time, :holiday_code, :note)
+    params.require(:work_time).permit(:id, :user_id, :work_date,
+      :start_time, :end_time, :holiday, :late, :leave, :note)
   end
 end

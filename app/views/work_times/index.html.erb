@@ -25,8 +25,8 @@
           <% if holiday_name(work_time.work_date) %>
           <span style="color: red"><%= holiday_name(work_time.work_date) %></span><br />
           <% end %>
-          <% if work_time.holiday_code != @holiday_enum[""] && @holiday_enum.key(work_time.holiday_code) %>
-          <span style="color: red"><%= @holiday_enum.key(work_time.holiday_code) %></span><br />
+          <% if work_time.holiday!= @holiday_enum[""] && @holiday_enum.key(work_time.holiday) %>
+          <span style="color: red"><%= @holiday_enum.key(work_time.holiday) %></span><br />
           <% end %>
           <%= work_time.note %>
         </td>

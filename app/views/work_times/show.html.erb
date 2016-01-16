@@ -25,9 +25,23 @@
       </td>
   </tr>
   <tr>
+      <th><%= fa_icon "sticky-note-o" %> 遅刻区分</th>
+      <td>
+        <%= best_in_place @work_time, :late,
+            :display_with => proc { |h| @late_enum.key(h) } %>
+      </td>
+  </tr>
+  <tr>
+      <th><%= fa_icon "sticky-note-o" %> 早退区分</th>
+      <td>
+        <%= best_in_place @work_time, :leave,
+            :display_with => proc { |h| @leave_enum.key(h) } %>
+      </td>
+  </tr>
+  <tr>
       <th><%= fa_icon "sticky-note-o" %> 休日区分</th>
       <td>
-        <%= best_in_place @work_time, :holiday_code,
+        <%= best_in_place @work_time, :holiday,
             :display_with => proc { |h| @holiday_enum.key(h) } %>
       </td>
   </tr>
