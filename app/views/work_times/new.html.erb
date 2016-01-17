@@ -28,7 +28,6 @@
     <%= f.label :leave, class: 'control-label' %>
     <%= f.select :leave, options_for_select(@leave_enum.collect { |h| [h[0], h[1]] }, selected: @work_time.leave), {} , class: 'form-control' %>
     <%= f.label :holiday, class: 'control-label' %>
-    <%= f.label :holiday, class: 'control-label' %>
     <%= f.select :holiday, options_for_select(@holiday_enum.collect { |h| [h[0], h[1]] }, selected: @work_time.holiday), {} , class: 'form-control' %>
     <%= f.label :note, class: 'control-label' %>
     <%= f.text_field :note, class: 'form-control' %>
