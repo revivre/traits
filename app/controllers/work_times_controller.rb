@@ -1,43 +1,31 @@
 class WorkTimesController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :logged_in_user
+  before_action :find_work_time, only: [:edit, :update, :show]
+  before_action :set_enums, only: [:index, :edit, :show, :new]
   respond_to :html, :json
 
   def index
-    @work_times = WorkTime.all
-    @holiday_enum = WorkTime.holiday_enums
-    @late_enum = WorkTime.late_enums
-    @leave_enum = WorkTime.leave_enums
-  end
+    if params[:year].nil? && params[:month].nil?
+      @start_date = Date.today.beginning_of_month
+      @end_date   = Date.today.end_of_month
+    else
+      @year = params[:year].to_i
+      @month = params[:month].to_i
 
-  def index_month
-    @holiday_enum = WorkTime.holiday_enums
-    @late_enum = WorkTime.late_enums
-    @leave_enum = WorkTime.leave_enums
-
-    @year = params[:year].to_i
-    @month = params[:month].to_i
-
-    if( @year == 0 || @month == 0 )
-      @work_time = WorkTime.find(params[:id])
-      return
+      if @year == 0 || @month == 0
+        @work_time = WorkTime.find(params[:id])
+        return
+      end
+      @start_date = Date.new(@year, @month, 1)
+      @end_date   = Date.new(@year, @month, -1)
     end
-
-    start_date = Date.new(@year,@month, 1)
-    end_date   = Date.new(@year,@month, -1)
-    @work_times = WorkTime.where(:work_date => start_date..end_date)
-    render "work_times/index"
+    @work_times = WorkTime.by_month(@start_date, field: :work_date)
   end
 
   def edit
-    @work_time = WorkTime.find(params[:id])
-    @holiday_enum = WorkTime.holiday_enums
-    @late_enum = WorkTime.late_enums
-    @leave_enum = WorkTime.leave_enums
   end
 
   def update
-    @work_time = WorkTime.find(params[:id])
-
     respond_to do |format|
       if @work_time.update_attributes(work_time_params)
         format.html { redirect_to work_times_path }
@@ -76,8 +64,19 @@ end
 
   private
 
+  def find_work_time
+    @work_time = WorkTime.find(params[:id])
+  end
+
   def work_time_params
     params.require(:work_time).permit(:id, :user_id, :work_date,
-      :start_time, :end_time, :holiday, :late, :leave, :note)
+                                      :start_time, :end_time, :holiday, :late,
+                                      :leave, :note)
+  end
+
+  def set_enums
+    @holiday_enum = WorkTime.holiday_enums
+    @late_enum = WorkTime.late_enums
+    @leave_enum = WorkTime.leave_enums
   end
 end
