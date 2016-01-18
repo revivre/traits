@@ -1,6 +1,6 @@
 class WorkTimesController < ApplicationController
   before_action :logged_in_user
-  before_action :find_work_time, only: [:edit, :update, :show]
+  before_action :find_work_time, only: [:edit, :update, :show, :destroy]
   before_action :set_enums, only: [:index, :edit, :show, :new]
   respond_to :html, :json
 
@@ -60,6 +60,12 @@ end
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @work_time.destroy
+    flash[:success] = @work_time.work_date.to_s + 'の勤務時間が削除されました'
+    redirect_to root_url
   end
 
   private
