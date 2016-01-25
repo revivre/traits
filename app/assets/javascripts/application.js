@@ -33,10 +33,11 @@ $(function () {
       defaultDate: "01/01/2000 17:30"
   });
 
+  var paramDate = decodeURIComponent(location.search.match(/date=(.*?)(&|$)/)[1]);
   $('#datetimepicker_date').datetimepicker({
       locale: 'ja',
       format: 'YYYY/MM/DD',
-      defaultDate: new Date()
+      defaultDate: paramDate
   });
 
   $(".alert-success").fadeTo(2000, 0).slideUp(500, function() {
