@@ -30,18 +30,22 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(user_params)
-      flash[:success] = 'Profile updated'
-      redirect_to @user
-    else
-      render 'edit'
+    respond_to do |format|
+      if @user.update_attributes(user_params)
+        format.html { redirect_to users_path }
+        format.json { respond_with_bip @user }
+        flash[:success] = 'Profile updated'
+      else
+          format.html { render action: 'edit' }
+          format.json { respond_with_bip @user }
+      end
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :password,
+    params.require(:user).permit(:name, :employee_id, :password,
                                  :password_confirmation)
   end
 
