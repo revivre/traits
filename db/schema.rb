@@ -13,6 +13,11 @@
 
 ActiveRecord::Schema.define(version: 20160129133017) do
 
+  create_table "settings", force: :cascade do |t|
+    t.string "name",  limit: 30, default: "", null: false
+    t.text   "value"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",      null: false

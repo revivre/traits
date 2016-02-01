@@ -24,13 +24,13 @@ $(function () {
   $('#datetimepicker_start').datetimepicker({
       locale: 'ja',
       format: 'hh:mm',
-      defaultDate: "01/01/2000 08:40"
+      defaultDate: new Date(gon.default_start_time)
   });
 
   $('#datetimepicker_end').datetimepicker({
       locale: 'ja',
       format: 'HH:mm',
-      defaultDate: "01/01/2000 17:30"
+      defaultDate: new Date(gon.default_end_time)
   });
 
   var paramDate = decodeURIComponent(location.search.match(/date=(.*?)(&|$)/)[1]);

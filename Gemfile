@@ -16,6 +16,7 @@ gem 'holiday_japan'
 gem 'bootstrap-sass'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
+gem 'gon'
 # generate fake names
 gem 'faker'
 gem 'gimei'
@@ -28,6 +29,8 @@ gem 'jquery-ui-rails'
 gem 'responders'
 # ER Diagram
 gem 'rails-erd'
+# models
+gem 'ransack'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2.1'
@@ -72,7 +75,7 @@ group :development, :test do
   gem 'spring'
 
   gem 'rspec-rails'
-  gem 'factory_girl_rails', '4.2.1'
+  gem 'factory_girl_rails', '~> 4.2.1'
   gem 'capybara'
   gem 'selenium-webdriver'
 

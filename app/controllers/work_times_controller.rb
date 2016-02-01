@@ -23,6 +23,8 @@ class WorkTimesController < ApplicationController
   end
 
   def edit
+    gon.default_start_time = Setting.start_time
+    gon.default_end_time = Setting.end_time
   end
 
   def update
@@ -47,10 +49,9 @@ class WorkTimesController < ApplicationController
 
   def new
     @work_time = WorkTime.new
-    @holiday_enum = WorkTime.holiday_enums
-    @late_enum = WorkTime.late_enums
-    @leave_enum = WorkTime.leave_enums
-end
+    gon.default_start_time = Setting.start_time
+    gon.default_end_time = Setting.end_time
+  end
 
   def create
     @work_time = current_user.work_times.build(work_time_params)
