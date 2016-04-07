@@ -1,5 +1,5 @@
 == README
 
-[![Build Status](https://travis-ci.org/revivre/traits.svg?branch=master)](https://travis-ci.org/revivre/traits)
+{<img src="https://travis-ci.org/revivre/traits.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/revivre/traits]
 
 now recording.....
