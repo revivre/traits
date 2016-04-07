@@ -1,3 +1,5 @@
 == README
 
+[![Build Status](https://travis-ci.org/revivre/traits.svg?branch=master)](https://travis-ci.org/revivre/traits)
+
 now recording.....
