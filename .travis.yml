@@ -3,6 +3,7 @@ sudo: false
 cache: bundler
 rvm:
   - 2.2
-
 gemfile:
   - Gemfile
+notifications:
+  slack: revivrer:Kr0LP8Ba45pbbpLjBWIiFKAO
